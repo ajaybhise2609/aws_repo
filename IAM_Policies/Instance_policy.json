@@ -1,0 +1,38 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstanceStatus",
+                "ec2:DescribeInstanceTypes",
+                "ec2:DescribeInstances"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowStartStopTaggedEC2",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:StopInstances"
+            ],
+            "Resource": "arn:aws:ec2:*:202977753489:instance/*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/Owner": "testuser1"
+                }
+            }
+        },
+        {
+            "Sid": "Route53AndDomainsFullAccess",
+            "Effect": "Allow",
+            "Action": [
+                "route53:*",
+                "route53domains:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

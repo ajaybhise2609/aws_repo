@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "UserAndServicesTrustPolicy",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::202977753489:user/main-user"
+                ],
+                "Service": [
+                    "ec2.amazonaws.com",
+                    "lambda.amazonaws.com",
+                    "ssm.amazonaws.com"
+                ]
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}

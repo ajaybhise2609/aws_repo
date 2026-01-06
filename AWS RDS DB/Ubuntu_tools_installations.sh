@@ -1,0 +1,8 @@
+#!/bin/bash
+##ubuntu Installation##
+
+install python 3
+apt update && apt install python3-pip -y
+
+pip install sqlalchemy
+pip install pymysql

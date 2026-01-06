@@ -1,0 +1,18 @@
+{
+    "operation": "create",
+    "payload": {
+        "TableName": "bookstore",
+        "Item": {
+            "id": 10,
+            "author": "Robert K",
+            "bookname": "Rich Dad & Poor Dad",
+            "Location": "USA",
+            "State": "Hawaii",
+            "Hobbies": {
+                "Act1": "Swimming",
+                "Act2": "Cycling",
+                "Act3": "Writing"
+            }
+        }
+    }
+}
