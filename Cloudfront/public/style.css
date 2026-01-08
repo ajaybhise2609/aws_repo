@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f9fc;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #555;
+    margin-top: 0;
+}
+
+.summary {
+    margin: 20px 0;
+}
+
+.links a {
+    display: inline-block;
+    margin-right: 15px;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.certs img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 6px;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
