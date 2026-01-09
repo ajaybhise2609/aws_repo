@@ -1,0 +1,17 @@
+// This policy allows the IAM user "developeruser2" in the AWS account "Your_AWS_ACCOUNT_ID" to perform any action on all objects accessible
+// through the S3 access point "devaccesspoint" in the "us-east-1" region.
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::202977753489:user/dev2"
+            },
+            "Action": "*",
+            "Resource": "arn:aws:s3:us-east-1:202977753489:accesspoint/apdev2/object/folder2/*"
+        }
+    ]
+}
