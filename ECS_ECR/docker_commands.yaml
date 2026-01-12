@@ -1,0 +1,38 @@
+docker run -d --name nginx01 -p 8000:80 nginx:latest
+# This command runs an Nginx container in detached mode, mapping port 8000 on the host to port 80 in the container.
+
+docker ps
+# This command lists all running Docker containers to verify that the Nginx container is up and running.
+
+docker images 
+# This command lists all Docker images available on the host machine.
+
+docker exec -it nginx01 bash
+# This command allows you to access the running Nginx container's shell interactively.
+
+ cd usr/share/nginx/html/
+# This command navigates to the default web root directory inside the Nginx container.
+
+ apt-get install nano -y
+ apt-get install nano -y
+# This command installs the nano text editor inside the Nginx container.
+
+ docker logs -f nginx01
+# This command follows the logs of the Nginx container in real-time.
+
+rm -rf
+# This command is used to remove files or directories forcefully and recursively.
+# Note: Use this command with caution as it will delete files permanently.
+
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 202977753489.dkr.ecr.us-east-1.amazonaws.com
+# This command logs into the AWS Elastic Container Registry (ECR) using the AWS CLI to authenticate Docker.
+
+docker build -t ecs-ecr-repo .
+# This command builds a Docker image from the Dockerfile in the current directory and tags it as "ecs-ecr-repo".
+
+docker tag ecs-ecr-repo:latest 202977753489.dkr.ecr.us-east-1.amazonaws.com/ecs-ecr-repo:latest
+# This command tags the local Docker image "ecs-ecr-repo:latest" with the ECR repository URI for pushing.
+
+docker push 202977753489.dkr.ecr.us-east-1.amazonaws.com/ecs-ecr-repo:latest
+# This command pushes the tagged Docker image to the specified AWS ECR repository.
